@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Pokemons } from "./pokemon";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   function getRandomIntInclusive(min, max) {
@@ -10,12 +12,27 @@ function App() {
 
   const [guess, setGuess] = useState(0);
   const [magicNumber, setMagicNumber] = useState(0);
+  const [tries, setTries] = useState(3);
 
   const handleSubmit = () => {
-    if (parseInt(magicNumber) === parseInt(guess)) {
-      window.alert("Hello");
+    const mNumber = parseInt(magicNumber);
+    const guessNumber = parseInt(guess);
+
+    if (mNumber === guessNumber) {
+      toast.success("Congrats! You caught a Pokemon");
+    } else {
+      if (guessNumber > mNumber) {
+        toast.error(
+          `Incorrect! Your number is too high\nYou have ${tries} tries left`
+        );
+      } else {
+        toast.error(
+          `Incorrect! Your number is too low\nYou have ${tries} tries left`
+        );
+      }
     }
   };
+
   return (
     <div className="bg-tile">
       <div className="flex w-full bg-black p-4 justify-between">
@@ -30,8 +47,8 @@ function App() {
           <button className="bg-white">View Pokemon</button>
         </div>
       </div>
-      <div className="flex flex-col gap-y-5 place-items-center mt-6">
-        <h2>Want to catch this Pokemon?</h2>
+      <div className="flex flex-col gap-y-5 place-items-center mt-6 font-semibold ">
+        <h2 className="text-redFa">Want to catch this Pokemon?</h2>
         <div
           className={`w-72 h-96 p-10 border-black border-4 rounded-2xl shadow-2xl transition ease-linear delay-300 hover:scale-110 ${Pokemons[15].shadow} ${Pokemons[15].bg}`}
         >
@@ -53,6 +70,16 @@ function App() {
         <h4>
           {parseInt(magicNumber) === parseInt(guess) ? "Success" : "Fails"}
         </h4>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+        />
       </div>
     </div>
   );
