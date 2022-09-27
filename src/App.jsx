@@ -1,42 +1,48 @@
 import { useState } from "react";
-import "react-toastify/dist/ReactToastify.css";
+import { Route, Routes } from "react-router-dom";
 import { CatchPokemon } from "./components/CatchPokemon";
+import { Home } from "./components/Home";
+import { NotFound } from "./components/NotFound";
+import { ViewPokemons } from "./components/ViewPokemons";
 
-function App() {
-  function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
-  }
-
+const App = () => {
   const [state, setState] = useState({
     guess: 0,
-    magicNumber: 0,
+    magicNumber: 1,
     tries: 3,
     currentPokemon: 0,
     pokemonList: [],
   });
+  const getRandomIntInclusive = (min, max) => {
+    // courtesy of MDN
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+  };
 
   const startGame = () => {
     const currentPokemon = parseInt(getRandomIntInclusive(0, 15));
     const magicNumber = parseInt(getRandomIntInclusive(1, 10));
     setState({ ...state, currentPokemon, magicNumber });
   };
-
   return (
-    <div className="bg-tile">
-      <div className="flex w-full bg-black p-4 justify-between">
-        <h2 className="text-3xl text-white">Catch 'em all</h2>
-        <div className="flex gap-x-4">
-          <button onClick={() => startGame()} className="bg-white">
-            Catch Pokemon
-          </button>
-          <button className="bg-white">View Pokemon</button>
-        </div>
-      </div>
-      <CatchPokemon state={state} setState={setState} startGame={startGame} />
-    </div>
+    <Routes>
+      <Route exact path="/" element={<Home startGame={startGame} />}>
+        <Route
+          path="catch-pokemon"
+          element={
+            <CatchPokemon
+              state={state}
+              setState={setState}
+              startGame={startGame}
+            />
+          }
+        />
+        <Route path="view-pokemons" element={<ViewPokemons />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;

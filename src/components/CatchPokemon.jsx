@@ -1,5 +1,6 @@
 import { ToastContainer, toast } from "react-toastify";
 import { Pokemons } from "../pokemon";
+import "react-toastify/dist/ReactToastify.css";
 
 export const CatchPokemon = ({ state, setState, startGame }) => {
   const handleSubmit = () => {
