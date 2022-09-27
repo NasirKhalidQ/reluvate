@@ -1,16 +1,25 @@
 import { ToastContainer, toast } from "react-toastify";
-import { Pokemons } from "../../pokemon";
+import { Pokemons } from "../pokemon";
 
-export const CatchPokemon = ({ state, setState }) => {
+export const CatchPokemon = ({ state, setState, startGame }) => {
   const handleSubmit = () => {
-    const mNumber = parseInt(state.magicNumber);
-    const guessNumber = parseInt(state.guess);
     if (state.tries > 0) {
       setState({ ...state, tries: state.tries - 1 });
     }
 
+    const mNumber = parseInt(state.magicNumber);
+    const guessNumber = parseInt(state.guess);
+
     if (mNumber === guessNumber) {
       toast.success("Congrats! You caught a Pokemon");
+      setState({
+        ...state,
+        pokemonList: [
+          ...state.pokemonList,
+          Pokemons[parseInt(state.currentPokemon)],
+        ],
+      });
+      startGame();
     } else {
       if (guessNumber > mNumber) {
         toast.error(

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { CatchPokemon } from "./components/CatchPokemon/CatchPokemon";
+import { CatchPokemon } from "./components/CatchPokemon";
 
 function App() {
   function getRandomIntInclusive(min, max) {
@@ -14,6 +14,7 @@ function App() {
     magicNumber: 0,
     tries: 3,
     currentPokemon: 0,
+    pokemonList: [],
   });
 
   const startGame = () => {
@@ -33,7 +34,7 @@ function App() {
           <button className="bg-white">View Pokemon</button>
         </div>
       </div>
-      <CatchPokemon state={state} setState={setState} />
+      <CatchPokemon state={state} setState={setState} startGame={startGame} />
     </div>
   );
 }
