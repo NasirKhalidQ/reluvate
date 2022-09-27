@@ -1,0 +1,178 @@
+export const Pokemons = [
+  {
+    name: "Bulbasaur",
+    hp: 45,
+    attack: 49,
+    defense: 49,
+    type: "Grass",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F001.png&w=640&q=50",
+    bg: "bg-emerald-100",
+    shadow: "shadow-emerald-700",
+  },
+  {
+    name: "Charmander",
+    hp: 39,
+    attack: 52,
+    defense: 43,
+    type: "Fire",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F004.png&w=640&q=50",
+    bg: "bg-orange-100",
+    shadow: "shadow-orange-700",
+  },
+  {
+    name: "Squirtle",
+    hp: 44,
+    attack: 48,
+    defense: 65,
+    type: "Water",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F007.png&w=640&q=50",
+    bg: "bg-cyan-100",
+    shadow: "shadow-cyan-700",
+  },
+  {
+    name: "Pidgey",
+    hp: 40,
+    attack: 45,
+    defense: 40,
+    type: "Normal",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F016.png&w=640&q=50",
+    bg: "bg-amber-100",
+    shadow: "shadow-amber-700",
+  },
+  {
+    name: "Rattata",
+    hp: 30,
+    attack: 56,
+    defense: 35,
+    type: "Normal",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F019.png&w=640&q=50",
+    bg: "bg-violet-100",
+    shadow: "shadow-violet-700",
+  },
+  {
+    name: "Pikachu",
+    hp: 35,
+    attack: 55,
+    defense: 40,
+    type: "Electric",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F025.png&w=640&q=50",
+    bg: "bg-yellow-100",
+    shadow: "shadow-yellow-700",
+  },
+  {
+    name: "Jigglypuff",
+    hp: 115,
+    attack: 45,
+    defense: 20,
+    type: "Normal",
+    bg: "bg-pink-100",
+    shadow: "shadow-pink-700",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F039.png&w=640&q=50",
+  },
+  {
+    name: "Diglett",
+    hp: 10,
+    attack: 55,
+    defense: 25,
+    type: "Ground",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F050.png&w=640&q=50",
+    bg: "bg-stone-300",
+    shadow: "shadow-stone-700",
+  },
+  {
+    name: "Machop",
+    hp: 70,
+    attack: 80,
+    defense: 50,
+    type: "Fighting",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F066.png&w=640&q=50",
+    bg: "bg-gray-300",
+    shadow: "shadow-gray-700",
+  },
+  {
+    name: "Tentacool",
+    hp: 40,
+    attack: 40,
+    defense: 35,
+    type: "Water",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F072.png&w=640&q=50",
+    bg: "bg-teal-100",
+    shadow: "shadow-teal-700",
+  },
+  {
+    name: "Geodude",
+    hp: 40,
+    attack: 80,
+    defense: 100,
+    type: "Rock",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F074.png&w=640&q=50",
+    bg: "bg-yellow-100",
+    shadow: "shadow-yellow-700",
+  },
+  {
+    name: "Slowpoke",
+    hp: 90,
+    attack: 65,
+    defense: 65,
+    type: "Water",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F079.png&w=640&q=50",
+    bg: "bg-fuchsia-100",
+    shadow: "shadow-fuchsia-700",
+  },
+  {
+    name: "Magnemite",
+    hp: 25,
+    attack: 35,
+    defense: 70,
+    type: "Electric",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F081.png&w=640&q=50",
+    bg: "bg-indigo-100",
+    shadow: "shadow-indigo-700",
+  },
+  {
+    name: "Hitmonlee",
+    hp: 50,
+    attack: 120,
+    defense: 53,
+    type: "Fighting",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F106.png&w=640&q=50",
+    bg: "bg-amber-100",
+    shadow: "shadow-amber-700",
+  },
+  {
+    name: "Chansey",
+    hp: 250,
+    attack: 5,
+    defense: 5,
+    type: "Normal",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F113.png&w=640&q=50",
+    bg: "bg-fuchsia-100",
+    shadow: "shadow-fuchsia-700",
+  },
+  {
+    name: "Mr. Mime",
+    hp: 40,
+    attack: 45,
+    defense: 65,
+    type: "Psychic",
+    imageUrl:
+      "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F122.png&w=640&q=50",
+    bg: "bg-fuchsia-100",
+    shadow: "shadow-fuchsia-700",
+  },
+];

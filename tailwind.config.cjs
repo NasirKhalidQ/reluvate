@@ -6,6 +6,9 @@ module.exports = {
       backgroundImage: {
         tile: "url('https://pokenex.vercel.app/bg-tile.png')",
       },
+      colors: {
+        redFa: "#FF5A5F",
+      },
     },
   },
   plugins: [],
