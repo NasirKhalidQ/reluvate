@@ -2,8 +2,12 @@ import { ToastContainer, toast } from "react-toastify";
 import { Pokemons } from "../pokemon";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
+import Confetti from "react-confetti";
+import { useWindowSize } from "./hooks/useWindowSize";
 
 export const CatchPokemon = ({ state, setState, startGame }) => {
+  const { width, height } = useWindowSize();
+
   const handleSubmit = () => {
     if (state.tries > 0) {
       setState({ ...state, tries: state.tries - 1 });
@@ -14,7 +18,7 @@ export const CatchPokemon = ({ state, setState, startGame }) => {
     const mNumber = parseInt(state.magicNumber);
     const guessNumber = parseInt(state.guess);
 
-    if (mNumber === guessNumber && tries !== 3) {
+    if (mNumber === guessNumber && state.tries !== 3) {
       toast.success("Congrats! You caught a Pokemon");
       setState({
         ...state,
@@ -89,6 +93,7 @@ export const CatchPokemon = ({ state, setState, startGame }) => {
         pauseOnFocusLoss
         draggable
       />
+      <Confetti width={width} height={height} recycle={false} />
     </div>
   );
 };
