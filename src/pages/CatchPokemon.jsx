@@ -75,7 +75,14 @@ export const CatchPokemon = ({ state, setState }) => {
         className={`${
           selected ? "bg-black text-redFa" : "bg-white text-black"
         } rounded-sm text-sm px-4 py-1 border-2 border-black transition duration-300 hover:bg-black hover:text-redFa`}
-        onClick={() => setDifficulty(_difficulty)}
+        onClick={() => {
+          setState({
+            ...state,
+            magicNumber: parseInt(getRandomIntInclusive(1, 10)),
+            tries: 3,
+          });
+          setDifficulty(_difficulty);
+        }}
       >
         {children}
       </button>
