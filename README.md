@@ -1,4 +1,4 @@
-# 🦋 Reluvate Malaysia - Frontend assessmnent task
+# 🦋 Reluvate Malaysia - Frontend assessment task
 
 This assessment is a part of the hiring process at Reluvate for the full-time front-end developer position.
 
