@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Input } from "../components";
+import { Button, Input } from "../components";
 export const Login = () => {
   const navigate = useNavigate();
 
@@ -35,12 +35,7 @@ export const Login = () => {
               <p>Password</p>
               <Input type="password" value={password} setState={setPassword} />
             </div>
-            <button
-              onClick={handleLogin}
-              className="bg-black w-64 p-2 mt-16 text-white rounded-sm hover:text-redFa transition-all ease-in-out duration-300"
-            >
-              Login
-            </button>
+            <Button handleClick={handleLogin}>Login</Button>
           </div>
         </div>
       </div>
