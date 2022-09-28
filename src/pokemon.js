@@ -9,6 +9,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F001.png&w=640&q=50",
     bg: "bg-emerald-100",
     shadow: "shadow-emerald-700",
+    id: 1,
   },
   {
     name: "Charmander",
@@ -20,6 +21,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F004.png&w=640&q=50",
     bg: "bg-orange-100",
     shadow: "shadow-orange-700",
+    id: 2,
   },
   {
     name: "Squirtle",
@@ -31,6 +33,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F007.png&w=640&q=50",
     bg: "bg-cyan-100",
     shadow: "shadow-cyan-700",
+    id: 3,
   },
   {
     name: "Pidgey",
@@ -42,6 +45,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F016.png&w=640&q=50",
     bg: "bg-amber-100",
     shadow: "shadow-amber-700",
+    id: 4,
   },
   {
     name: "Rattata",
@@ -53,6 +57,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F019.png&w=640&q=50",
     bg: "bg-violet-100",
     shadow: "shadow-violet-700",
+    id: 5,
   },
   {
     name: "Pikachu",
@@ -64,6 +69,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F025.png&w=640&q=50",
     bg: "bg-yellow-100",
     shadow: "shadow-yellow-700",
+    id: 6,
   },
   {
     name: "Jigglypuff",
@@ -75,6 +81,7 @@ export const Pokemons = [
     shadow: "shadow-pink-700",
     imageUrl:
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F039.png&w=640&q=50",
+    id: 7,
   },
   {
     name: "Diglett",
@@ -86,6 +93,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F050.png&w=640&q=50",
     bg: "bg-stone-300",
     shadow: "shadow-stone-700",
+    id: 8,
   },
   {
     name: "Machop",
@@ -97,6 +105,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F066.png&w=640&q=50",
     bg: "bg-gray-300",
     shadow: "shadow-gray-700",
+    id: 9,
   },
   {
     name: "Tentacool",
@@ -108,6 +117,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F072.png&w=640&q=50",
     bg: "bg-teal-100",
     shadow: "shadow-teal-700",
+    id: 10,
   },
   {
     name: "Geodude",
@@ -119,6 +129,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F074.png&w=640&q=50",
     bg: "bg-yellow-100",
     shadow: "shadow-yellow-700",
+    id: 11,
   },
   {
     name: "Slowpoke",
@@ -130,6 +141,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F079.png&w=640&q=50",
     bg: "bg-fuchsia-100",
     shadow: "shadow-fuchsia-700",
+    id: 12,
   },
   {
     name: "Magnemite",
@@ -141,6 +153,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F081.png&w=640&q=50",
     bg: "bg-indigo-100",
     shadow: "shadow-indigo-700",
+    id: 13,
   },
   {
     name: "Hitmonlee",
@@ -152,6 +165,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F106.png&w=640&q=50",
     bg: "bg-amber-100",
     shadow: "shadow-amber-700",
+    id: 14,
   },
   {
     name: "Chansey",
@@ -163,6 +177,7 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F113.png&w=640&q=50",
     bg: "bg-fuchsia-100",
     shadow: "shadow-fuchsia-700",
+    id: 15,
   },
   {
     name: "Mr. Mime",
@@ -174,5 +189,6 @@ export const Pokemons = [
       "https://pokenex.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FHybridShivam%2FPokemon%2Fmaster%2Fassets%2Fimages%2F122.png&w=640&q=50",
     bg: "bg-fuchsia-100",
     shadow: "shadow-fuchsia-700",
+    id: 16,
   },
 ];

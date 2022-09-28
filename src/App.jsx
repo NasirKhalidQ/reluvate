@@ -4,15 +4,9 @@ import { CatchPokemon } from "./components/CatchPokemon";
 import { Home } from "./components/Home";
 import { NotFound } from "./components/NotFound";
 import { ViewPokemons } from "./components/ViewPokemons";
+import { getRandomIntInclusive } from "./utils";
 
 const App = () => {
-  const getRandomIntInclusive = (min, max) => {
-    // courtesy of MDN
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
-  };
-
   const [state, setState] = useState({
     guess: 0,
     magicNumber: parseInt(getRandomIntInclusive(1, 10)),
@@ -32,13 +26,7 @@ const App = () => {
       <Route exact path="/" element={<Home startGame={startGame} />}>
         <Route
           path="catch-pokemon"
-          element={
-            <CatchPokemon
-              state={state}
-              setState={setState}
-              startGame={startGame}
-            />
-          }
+          element={<CatchPokemon state={state} setState={setState} />}
         />
         <Route path="view-pokemons" element={<ViewPokemons />} />
         <Route path="*" element={<NotFound />} />
