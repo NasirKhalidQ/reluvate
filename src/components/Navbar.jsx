@@ -18,7 +18,9 @@ export const Navbar = ({ startGame }) => {
         <NavLink to="/catch-pokemon">
           <Button onClick={() => startGame()}>Catch Pokemon</Button>
         </NavLink>
-        <Button onClick={() => startGame()}> View Pokemon</Button>
+        <NavLink to="/view-pokemons">
+          <Button onClick={() => startGame()}> View Pokemon</Button>
+        </NavLink>
       </div>
     </div>
   );

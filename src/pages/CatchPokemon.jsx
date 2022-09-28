@@ -1,10 +1,11 @@
 import { ToastContainer, toast } from "react-toastify";
-import { Pokemons } from "../pokemon";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 import Confetti from "react-confetti";
 import { useWindowSize } from "../hooks";
 import { getRandomIntInclusive } from "../utils";
+import { PokemonCard } from "../components";
+import { Pokemons } from "../mock-data";
 
 export const CatchPokemon = ({ state, setState }) => {
   const { width, height } = useWindowSize();
@@ -55,22 +56,7 @@ export const CatchPokemon = ({ state, setState }) => {
   return (
     <div className="flex flex-col gap-y-5 place-items-center mt-6 font-semibold">
       <h2 className="text-redFa">Want to catch this Pokemon?</h2>
-      <div
-        className={`w-72 h-96 px-10 py-3 text-black border-black border-4 flex flex-col rounded-2xl shadow-2xl transition ease-linear delay-300 hover:scale-110 ${
-          Pokemons[state.currentPokemon].shadow
-        } ${Pokemons[state.currentPokemon].bg}`}
-      >
-        <p className="ml-16 text-xl">{`#00${state.currentPokemon + 1}`}</p>
-        <img
-          src={Pokemons[state.currentPokemon].imageUrl}
-          alt={Pokemons[state.currentPokemon].name}
-        />
-        <p className="mt-4">Name: {Pokemons[state.currentPokemon].name}</p>
-        <p>HP: {Pokemons[state.currentPokemon].hp}</p>
-        <p>Attack: {Pokemons[state.currentPokemon].attack}</p>
-        <p>Defense: {Pokemons[state.currentPokemon].defense}</p>{" "}
-        <p>Type: {Pokemons[state.currentPokemon].type}</p>
-      </div>
+      <PokemonCard pokemon={Pokemons[state.currentPokemon]} />
       <h4 className="mt-4 font-medium">Pick a number between 1 and 10</h4>
       <input
         className="px-3 py-2 w-64 rounded-sm focus:outline-gray-900 bg-gray-100 border-2 border-zinc-500"
