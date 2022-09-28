@@ -5,7 +5,8 @@ export const ViewPokemons = ({ pokemonList, deletePokemon }) => {
     <div className="flex flex-col gap-y-10 mt-6 font-semibold p-4">
       {pokemonList?.length > 0 ? (
         <h2 className="text-green-600">
-          You possess {pokemonList.length} Pokemon(s)! You are rich!
+          You possess {pokemonList.length} Pokemon
+          {pokemonList.length > 1 ? "s" : ""}! You are rich!
         </h2>
       ) : (
         <div className="flex -gap-x-4">
