@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { CatchPokemon } from "./components/CatchPokemon";
-import { Home } from "./components/Home";
-import { NotFound } from "./components/NotFound";
-import { ViewPokemons } from "./components/ViewPokemons";
+import { CatchPokemon, ViewPokemons, NotFound, Home } from "./pages";
 import { getRandomIntInclusive } from "./utils";
 
 const App = () => {
@@ -28,7 +25,10 @@ const App = () => {
           path="catch-pokemon"
           element={<CatchPokemon state={state} setState={setState} />}
         />
-        <Route path="view-pokemons" element={<ViewPokemons />} />
+        <Route
+          path="view-pokemons"
+          element={<ViewPokemons state={state} setState={setState} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
