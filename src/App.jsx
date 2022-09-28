@@ -6,13 +6,6 @@ import { NotFound } from "./components/NotFound";
 import { ViewPokemons } from "./components/ViewPokemons";
 
 const App = () => {
-  const [state, setState] = useState({
-    guess: 0,
-    magicNumber: 1,
-    tries: 3,
-    currentPokemon: 0,
-    pokemonList: [],
-  });
   const getRandomIntInclusive = (min, max) => {
     // courtesy of MDN
     min = Math.ceil(min);
@@ -20,11 +13,20 @@ const App = () => {
     return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
   };
 
+  const [state, setState] = useState({
+    guess: 0,
+    magicNumber: parseInt(getRandomIntInclusive(1, 10)),
+    tries: 3,
+    currentPokemon: parseInt(getRandomIntInclusive(0, 15)),
+    pokemonList: [],
+  });
+
   const startGame = () => {
     const currentPokemon = parseInt(getRandomIntInclusive(0, 15));
     const magicNumber = parseInt(getRandomIntInclusive(1, 10));
-    setState({ ...state, currentPokemon, magicNumber });
+    setState({ ...state, currentPokemon, magicNumber, tries: 3 });
   };
+
   return (
     <Routes>
       <Route exact path="/" element={<Home startGame={startGame} />}>

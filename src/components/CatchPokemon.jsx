@@ -1,17 +1,20 @@
 import { ToastContainer, toast } from "react-toastify";
 import { Pokemons } from "../pokemon";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
 
 export const CatchPokemon = ({ state, setState, startGame }) => {
   const handleSubmit = () => {
     if (state.tries > 0) {
       setState({ ...state, tries: state.tries - 1 });
     }
+  };
 
+  const showToast = () => {
     const mNumber = parseInt(state.magicNumber);
     const guessNumber = parseInt(state.guess);
 
-    if (mNumber === guessNumber) {
+    if (mNumber === guessNumber && tries !== 3) {
       toast.success("Congrats! You caught a Pokemon");
       setState({
         ...state,
@@ -21,7 +24,7 @@ export const CatchPokemon = ({ state, setState, startGame }) => {
         ],
       });
       startGame();
-    } else {
+    } else if (state.tries !== 3) {
       if (guessNumber > mNumber) {
         toast.error(
           `Incorrect! Your number is too high. You have ${state.tries} tries left`
@@ -33,8 +36,13 @@ export const CatchPokemon = ({ state, setState, startGame }) => {
       }
     }
   };
+
+  useEffect(() => {
+    showToast();
+  }, [state.tries]);
+
   return (
-    <div className="flex flex-col gap-y-5 place-items-center mt-6 font-semibold ">
+    <div className="flex flex-col gap-y-5 place-items-center mt-6 font-semibold">
       <h2 className="text-redFa">Want to catch this Pokemon?</h2>
       <div
         className={`w-72 h-96 px-10 py-3 text-black border-black border-4 flex flex-col rounded-2xl shadow-2xl transition ease-linear delay-300 hover:scale-110 ${
@@ -61,7 +69,12 @@ export const CatchPokemon = ({ state, setState, startGame }) => {
       />
       <button
         onClick={handleSubmit}
-        className="bg-black w-64 p-2 text-white rounded-sm hover:text-redFa transition-all ease-in-out duration-300"
+        disabled={state.tries < 1}
+        className={`bg-black w-64 p-2 ${
+          state.tries < 1
+            ? "disabled:cursor-not-allowed disabled:bg-gray-500 disabled:hover:text-white"
+            : ""
+        } text-white rounded-sm hover:text-redFa transition-all ease-in-out duration-300`}
       >
         Submit
       </button>
