@@ -10,6 +10,7 @@ import { Pokemons } from "../mock-data";
 export const CatchPokemon = ({ state, setState }) => {
   const { width, height } = useWindowSize();
   const [difficulty, setDifficulty] = useState("easy");
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleSubmit = () => {
     if (state.tries > 0) {
@@ -22,6 +23,10 @@ export const CatchPokemon = ({ state, setState }) => {
     const guessNumber = parseInt(state.guess);
 
     if (mNumber === guessNumber && state.tries !== 3) {
+      setShowConfetti(true);
+      setTimeout(() => {
+        setShowConfetti(false);
+      }, [6000]);
       toast.success("Congrats! You caught a Pokemon");
       const caught = Pokemons[parseInt(state.currentPokemon)];
       setState({
@@ -33,7 +38,7 @@ export const CatchPokemon = ({ state, setState }) => {
           ...state.pokemonList,
           {
             ...caught,
-            level: getRandomIntInclusive(1, 1000),
+            level: getRandomIntInclusive(1, 100),
           },
         ],
       });
@@ -125,7 +130,7 @@ export const CatchPokemon = ({ state, setState }) => {
         pauseOnFocusLoss
         draggable
       />
-      {false && <Confetti width={width} height={height} recycle={true} />}
+      {showConfetti && <Confetti width={width} height={height} />}
     </div>
   );
 };
