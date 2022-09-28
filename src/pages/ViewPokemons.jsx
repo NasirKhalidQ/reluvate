@@ -13,7 +13,7 @@ export const ViewPokemons = ({ state, setState }) => {
         </h2>
       )}
 
-      <div className="flex gap-x-6">
+      <div className="flex flex-wrap gap-6">
         {state.pokemonList.map((pokemon) => (
           <PokemonCard pokemon={pokemon} />
         ))}

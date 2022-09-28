@@ -1,6 +1,6 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import { useWindowSize } from "../hooks";
 import { getRandomIntInclusive } from "../utils";
@@ -9,6 +9,7 @@ import { Pokemons } from "../mock-data";
 
 export const CatchPokemon = ({ state, setState }) => {
   const { width, height } = useWindowSize();
+  const [difficulty, setDifficulty] = useState("easy");
 
   const handleSubmit = () => {
     if (state.tries > 0) {
@@ -36,6 +37,7 @@ export const CatchPokemon = ({ state, setState }) => {
           },
         ],
       });
+      setDifficulty("easy");
     } else if (state.tries !== 3) {
       if (guessNumber > mNumber) {
         toast.error(
@@ -53,11 +55,48 @@ export const CatchPokemon = ({ state, setState }) => {
     showToast();
   }, [state.tries]);
 
+  useEffect(() => {
+    const number =
+      difficulty === "easy" ? 10 : difficulty === "medium" ? 100 : 1000;
+    setState({
+      ...state,
+      magicNumber: parseInt(getRandomIntInclusive(1, number)),
+    });
+  }, [difficulty]);
+
+  const Button = ({ children, _difficulty, selected }) => {
+    return (
+      <button
+        className={`${
+          selected ? "bg-black text-redFa" : "bg-white text-black"
+        } rounded-sm text-sm px-4 py-1 border-2 border-black transition duration-300 hover:bg-black hover:text-redFa`}
+        onClick={() => setDifficulty(_difficulty)}
+      >
+        {children}
+      </button>
+    );
+  };
+
   return (
     <div className="flex flex-col gap-y-5 place-items-center mt-6 font-semibold">
       <h2 className="text-redFa">Want to catch this Pokemon?</h2>
       <PokemonCard pokemon={Pokemons[state.currentPokemon]} transition />
-      <h4 className="mt-4 font-medium">Pick a number between 1 and 10</h4>
+      <h4 className="mt-4 font-medium">
+        Pick a number between 1 and 1
+        {difficulty === "easy" ? "0" : difficulty === "medium" ? "00" : "000"}
+      </h4>
+      <div className="flex gap-x-3">
+        <Button _difficulty="easy" selected={difficulty === "easy"}>
+          Easy
+        </Button>
+        <Button _difficulty="medium" selected={difficulty === "medium"}>
+          Medium
+        </Button>
+        <Button _difficulty="hard" selected={difficulty === "hard"}>
+          Hard
+        </Button>
+      </div>
+
       <input
         className="px-3 py-2 w-64 rounded-sm focus:outline-gray-900 bg-gray-100 border-2 border-zinc-500"
         type="number"

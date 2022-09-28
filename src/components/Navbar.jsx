@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 
 export const Navbar = ({ startGame }) => {
-  const Button = ({ onClick, children }) => {
+  const Button = ({ handleClick, children }) => {
     return (
       <button
-        onClick={onClick}
+        onClick={handleClick}
         className="bg-black border-redFa border-2 p-2 text-white font-medium rounded-sm hover:text-redFa transition-all ease-in-out duration-300"
       >
         {children}
@@ -16,10 +16,10 @@ export const Navbar = ({ startGame }) => {
       <h2 className="text-3xl text-white">Catch 'em all</h2>
       <div className="flex gap-x-4">
         <NavLink to="/catch-pokemon">
-          <Button onClick={() => startGame()}>Catch Pokemon</Button>
+          <Button handleClick={() => startGame()}>Catch Pokemon</Button>
         </NavLink>
         <NavLink to="/view-pokemons">
-          <Button onClick={() => startGame()}> View Pokemon</Button>
+          <Button> View Pokemon</Button>
         </NavLink>
       </div>
     </div>
