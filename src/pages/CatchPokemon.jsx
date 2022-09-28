@@ -23,6 +23,19 @@ export const CatchPokemon = ({ state, setState }) => {
     const guessNumber = parseInt(state.guess);
 
     if (mNumber === guessNumber && state.tries !== 3) {
+      const exists = state.pokemonList.find(
+        (pokemon) => pokemon.id === Pokemons[parseInt(state.currentPokemon)].id
+      );
+      if (exists) {
+        toast.error("You already have this same pokemon in your portfolio!");
+        setState({
+          ...state,
+          currentPokemon: parseInt(getRandomIntInclusive(0, 15)),
+          magicNumber: parseInt(getRandomIntInclusive(1, 10)),
+          tries: 3,
+        });
+        return;
+      }
       setShowConfetti(true);
       setTimeout(() => {
         setShowConfetti(false);
@@ -30,7 +43,6 @@ export const CatchPokemon = ({ state, setState }) => {
       toast.success("Congrats! You caught a Pokemon");
       const caught = Pokemons[parseInt(state.currentPokemon)];
       setState({
-        guess: 0,
         magicNumber: parseInt(getRandomIntInclusive(1, 10)),
         tries: 3,
         currentPokemon: parseInt(getRandomIntInclusive(0, 15)),

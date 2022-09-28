@@ -27,6 +27,7 @@ Website is deployed [here](https://reluvate.netlify.app/login/)
 
 ## Not Completed ❌
 
+- No refresh page option as state is saved locally
 - Backend tasks, creation of API endpoints
 - Authentication using JWT, unique user, etc
 - Database integration
@@ -45,9 +46,6 @@ Login page just redirects to /catch-pokemon after entering any values and clicki
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/75773436/192892409-25ee0dff-4561-450e-8019-827ab3321f63.png">
 ![image](https://user-images.githubusercontent.com/75773436/192892780-25fb446e-de92-4fc2-8498-44588d8388ab.png)
 
-
-
-
 ### Catch Pokemon
 
 Catch Pokemon button redirects to /catch-pokemon page. It initializes the game with 3 tries, a random number is generated for guessing and a random pokemon is displayed from a list of 16 pokemons. Pokemon card is displayed with details such as hp, etc.
@@ -57,7 +55,6 @@ A number must be input for guessing. A toast is displayed with error if number i
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/75773436/192891575-ea71cffe-af69-4ef6-bf76-e36b392b6522.png">
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/75773436/192891698-4c820dc1-93cb-47e9-b0c1-da97f4f4ebd8.png">
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/75773436/192891833-170ca415-7672-4dd2-9d2f-803d0145ebd0.png">
-
 
 ### View Pokemon
 
@@ -72,4 +69,3 @@ User can view the pokemons collected by clicking the view pokemon button in the 
 
 If a route does not exist, user is shown this page
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/75773436/192892333-af4d17c9-dc71-46d0-a86a-9de663289307.png">
-
