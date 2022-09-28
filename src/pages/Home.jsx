@@ -3,9 +3,9 @@ import { Navbar } from "../components";
 
 export const Home = ({ startGame }) => {
   return (
-    <div className="bg-tile">
+    <main className="bg-tile">
       <Navbar startGame={startGame} />
       <Outlet />
-    </div>
+    </main>
   );
 };

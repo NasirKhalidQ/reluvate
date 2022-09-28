@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const NotFound = () => {
   return (
-    <div className="flex flex-col gap-y-16 justify-center place-items-center w-screen h-screen">
+    <section className="flex flex-col gap-y-16 justify-center place-items-center w-screen h-screen">
       <div className="flex gap-x-4">
         <h1 className="text-4xl mt-4">Page Not Found</h1>
         <img
@@ -30,6 +30,6 @@ export const NotFound = () => {
           </button>
         </NavLink>
       </div>
-    </div>
+    </section>
   );
 };

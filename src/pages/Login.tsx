@@ -21,7 +21,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex justify-center mt-40">
+    <section className="flex justify-center mt-40">
       <div className="flex flex-col gap-y-8 place-items-center">
         <h1 className="text-4xl text-redFa font-medium">Catch 'em All</h1>
         <div className="flex flex-col gap-y-12 place-items-center justify-center  border-2 border-black py-10 px-8 rounded">
@@ -54,6 +54,6 @@ export const Login = () => {
         pauseOnFocusLoss
         draggable
       />
-    </div>
+    </section>
   );
 };

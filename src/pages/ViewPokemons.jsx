@@ -2,7 +2,7 @@ import { PokemonCard } from "../components";
 
 export const ViewPokemons = ({ pokemonList, deletePokemon }) => {
   return (
-    <div className="flex flex-col gap-y-10 mt-6 font-semibold p-4">
+    <section className="flex flex-col gap-y-10 mt-6 font-semibold p-4">
       {pokemonList?.length > 0 ? (
         <h2 className="text-green-600">
           You possess {pokemonList.length} Pokemon
@@ -50,6 +50,6 @@ export const ViewPokemons = ({ pokemonList, deletePokemon }) => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

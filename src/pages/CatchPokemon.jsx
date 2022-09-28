@@ -83,7 +83,7 @@ export const CatchPokemon = ({ state, setState }) => {
   };
 
   return (
-    <div className="flex flex-col gap-y-5 place-items-center mt-6 font-semibold">
+    <section className="flex flex-col gap-y-5 place-items-center mt-6 font-semibold">
       <h2 className="text-redFa">Want to catch this Pokemon?</h2>
       <PokemonCard pokemon={Pokemons[state.currentPokemon]} transition />
       <h4 className="mt-4 font-medium">
@@ -131,6 +131,6 @@ export const CatchPokemon = ({ state, setState }) => {
         draggable
       />
       {showConfetti && <Confetti width={width} height={height} />}
-    </div>
+    </section>
   );
 };

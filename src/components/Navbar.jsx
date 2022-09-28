@@ -12,7 +12,7 @@ export const Navbar = ({ startGame }) => {
     );
   };
   return (
-    <div className="flex w-full bg-black p-4 justify-between">
+    <nav className="flex w-full bg-black p-4 justify-between">
       <h2 className="text-3xl text-white">Catch 'em all</h2>
       <div className="flex gap-x-4">
         <NavLink to="/catch-pokemon">
@@ -22,6 +22,6 @@ export const Navbar = ({ startGame }) => {
           <Button> View Pokemon</Button>
         </NavLink>
       </div>
-    </div>
+    </nav>
   );
 };
