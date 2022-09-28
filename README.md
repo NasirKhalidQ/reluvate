@@ -6,8 +6,8 @@ Website is deployed [here](https://reluvate.netlify.app/login/)
 
 ## Technologies used ⚙
 
-- ReactJS with [Vite](https://create-react-app.dev/) v5.0+
-- [TailwindCSS](https://react-bootstrap.github.io/) for styling
+- ReactJS with [Vite](https://v2.vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/) for styling
 - [react-toastify](https://github.com/fkhadra/react-toastify) for displaying toasts on actions performed
 - [react-confetti](https://github.com/alampros/react-confetti) for party effect after successfully catching a pokemon
 - [react-router](https://reactrouter.com/en/main) for routing
