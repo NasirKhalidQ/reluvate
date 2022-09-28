@@ -56,7 +56,7 @@ export const CatchPokemon = ({ state, setState }) => {
   return (
     <div className="flex flex-col gap-y-5 place-items-center mt-6 font-semibold">
       <h2 className="text-redFa">Want to catch this Pokemon?</h2>
-      <PokemonCard pokemon={Pokemons[state.currentPokemon]} />
+      <PokemonCard pokemon={Pokemons[state.currentPokemon]} transition />
       <h4 className="mt-4 font-medium">Pick a number between 1 and 10</h4>
       <input
         className="px-3 py-2 w-64 rounded-sm focus:outline-gray-900 bg-gray-100 border-2 border-zinc-500"
