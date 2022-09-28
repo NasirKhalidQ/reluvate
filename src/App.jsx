@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { CatchPokemon, ViewPokemons, NotFound, Home } from "./pages";
+import { CatchPokemon, ViewPokemons, NotFound, Home, Login } from "./pages";
 import { getRandomIntInclusive } from "./utils";
 
 const App = () => {
@@ -31,6 +31,7 @@ const App = () => {
         />
         <Route path="*" element={<NotFound />} />
       </Route>
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 };
