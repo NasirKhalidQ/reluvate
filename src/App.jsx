@@ -18,6 +18,13 @@ const App = () => {
     setState({ ...state, currentPokemon, magicNumber, tries: 3 });
   };
 
+  const deletePokemon = (id) => {
+    setState({
+      ...state,
+      pokemonList: state.pokemonList.filter((pokemon) => pokemon.id !== id),
+    });
+  };
+
   return (
     <Routes>
       <Route exact path="/" element={<Home startGame={startGame} />}>
@@ -27,7 +34,12 @@ const App = () => {
         />
         <Route
           path="view-pokemons"
-          element={<ViewPokemons state={state} setState={setState} />}
+          element={
+            <ViewPokemons
+              pokemonList={state.pokemonList}
+              deletePokemon={deletePokemon}
+            />
+          }
         />
         <Route path="*" element={<NotFound />} />
       </Route>
