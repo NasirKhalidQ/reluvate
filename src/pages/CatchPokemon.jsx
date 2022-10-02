@@ -6,8 +6,12 @@ import { useWindowSize } from "../hooks";
 import { getRandomIntInclusive } from "../utils";
 import { PokemonCard } from "../components";
 import { Pokemons } from "../mock-data";
+import { usePokemonState, usePokemonStateUpdate } from "../context";
 
-export const CatchPokemon = ({ state, setState }) => {
+export const CatchPokemon = () => {
+  const state = usePokemonState();
+  const setState = usePokemonStateUpdate();
+
   const { width, height } = useWindowSize();
   const [difficulty, setDifficulty] = useState("easy");
   const [showConfetti, setShowConfetti] = useState(false);

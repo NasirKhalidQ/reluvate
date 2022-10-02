@@ -1,12 +1,22 @@
 import { PokemonCard } from "../components";
+import { usePokemonState, usePokemonStateUpdate } from "../context";
 
-export const ViewPokemons = ({ pokemonList, deletePokemon }) => {
+export const ViewPokemons = () => {
+  const state = usePokemonState();
+  const setState = usePokemonStateUpdate();
+
+  const deletePokemon = (id) => {
+    setState({
+      ...state,
+      pokemonList: state.pokemonList.filter((pokemon) => pokemon.id !== id),
+    });
+  };
   return (
     <section className="flex flex-col gap-y-10 mt-6 font-semibold p-4">
-      {pokemonList?.length > 0 ? (
+      {state.pokemonList?.length > 0 ? (
         <h2 className="text-green-600">
-          You possess {pokemonList.length} Pokemon
-          {pokemonList.length > 1 ? "s" : ""}! You are rich!
+          You possess {state.pokemonList.length} Pokemon
+          {state.pokemonList.length > 1 ? "s" : ""}! You are rich!
         </h2>
       ) : (
         <div className="flex -gap-x-4">
@@ -22,7 +32,7 @@ export const ViewPokemons = ({ pokemonList, deletePokemon }) => {
       )}
 
       <div className="flex flex-wrap gap-6">
-        {pokemonList.map((pokemon) => (
+        {state.pokemonList.map((pokemon) => (
           <div className="relative">
             <PokemonCard pokemon={pokemon} />
             <button onClick={() => deletePokemon(pokemon.id)}>
