@@ -2,14 +2,9 @@ import React, { createContext, useContext, useState } from "react";
 import { getRandomIntInclusive } from "../utils";
 
 const PokemonContext = createContext();
-const PokemonUpdateContext = createContext();
 
 export const usePokemonState = () => {
   return useContext(PokemonContext);
-};
-
-export const usePokemonStateUpdate = () => {
-  return useContext(PokemonUpdateContext);
 };
 
 export const PokemonProvider = ({ children }) => {
@@ -22,10 +17,8 @@ export const PokemonProvider = ({ children }) => {
   });
 
   return (
-    <PokemonContext.Provider value={pokemonState}>
-      <PokemonUpdateContext.Provider value={setPokemonState}>
-        {children}
-      </PokemonUpdateContext.Provider>
+    <PokemonContext.Provider value={{ pokemonState, setPokemonState }}>
+      {children}
     </PokemonContext.Provider>
   );
 };

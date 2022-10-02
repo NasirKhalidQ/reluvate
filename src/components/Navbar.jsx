@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { getRandomIntInclusive } from "../utils";
-import { usePokemonState, usePokemonStateUpdate } from "../context";
+import { usePokemonState } from "../context";
 
 const Button = ({ handleClick, children }) => {
   return (
@@ -14,13 +14,12 @@ const Button = ({ handleClick, children }) => {
 };
 
 export const Navbar = () => {
-  const state = usePokemonState();
-  const setState = usePokemonStateUpdate();
+  const { pokemonState, setPokemonState } = usePokemonState();
 
   const startGame = () => {
     const currentPokemon = parseInt(getRandomIntInclusive(0, 15));
     const magicNumber = parseInt(getRandomIntInclusive(1, 10));
-    setState({ ...state, currentPokemon, magicNumber, tries: 3 });
+    setPokemonState({ ...pokemonState, currentPokemon, magicNumber, tries: 3 });
   };
 
   return (
