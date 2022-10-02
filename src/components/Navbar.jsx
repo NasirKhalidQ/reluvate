@@ -12,7 +12,7 @@ export const Navbar = ({ startGame }) => {
     );
   };
   return (
-    <nav className="flex w-full bg-black p-4 justify-between">
+    <nav className="flex w-full bg-black p-4 justify-between gap-y-6 pl-12 sm:pl-4 flex-col sm:flex-row">
       <h2 className="text-3xl text-white">Catch 'em all</h2>
       <div className="flex gap-x-4">
         <NavLink to="/catch-pokemon">
